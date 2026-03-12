@@ -5,8 +5,6 @@
 *-------------------------|
 
 clear all
-set more off
-version 17
 
 * Your directory here:
 global wd "C:\Users\warre\OneDrive\Desktop\Georgetown\SecondSemester\Experimental_Design\Assignments\assignment_Stata_2\01_data"
@@ -33,7 +31,6 @@ split s, parse(">PS") gen(student_num_)
 
 *Reshape the data so that the dataset is in long format
 gen school_id = _n, bef(s)
-//Note: Sometimes the reshaping breaks the do file. If this happens, go to line 37 and run the do file from here.
 reshape long student_num_@, i(school_id) j(student)
 
 *Drop extra variables

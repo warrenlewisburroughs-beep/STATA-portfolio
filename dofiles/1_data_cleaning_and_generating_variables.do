@@ -6,8 +6,6 @@
 *-------------------------|
 
 clear all
-set more off
-version 17
 
 * Your directory here:
 global wd "C:\Users\warre\OneDrive\Desktop\Georgetown\SecondSemester\Experimental_Design\Assignments\assignment_Stata_2\01_data"
