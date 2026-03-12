@@ -36,22 +36,27 @@ foreach r in ahs103 am3944 ass95 ato12 bp557 fg443 ft227 glp38 mp1792 nbs56 nd54
 }
 
 *Generate the standardized score after the nonstandardized score (Variable with a lot of missing observations for now)
-gen stand_r1_score=., af(Reviewer1Score)
-gen stand_r2_score=., af(Reviewer2Score)
-gen stand_r3_score=., af(Reviewer3Score)
+gen stand_r1score=., af(Reviewer1Score)
+gen stand_r2score=., af(Reviewer2Score)
+gen stand_r3score=., af(Reviewer3Score)
 *In each of the standardized variables, add the standardized score by using the formula St Score = (score-mean)/sd
 foreach r in ahs103 am3944 ass95 ato12 bp557 fg443 ft227 glp38 mp1792 nbs56 nd549 oo140 sa1600 scb136 yc577 ynd3 {
-	replace stand_r1_score = (Reviewer1Score - mean_`r')/sd_`r' if Reviewer1=="`r'"
-	replace stand_r2_score = (Reviewer2Score - mean_`r')/sd_`r' if Reviewer2=="`r'"
-	replace stand_r3_score = (Reviewer3Score - mean_`r')/sd_`r' if Reviewer3=="`r'"
+	replace stand_r1score = (Reviewer1Score - mean_`r')/sd_`r' if Reviewer1=="`r'"
+	replace stand_r2score = (Reviewer2Score - mean_`r')/sd_`r' if Reviewer2=="`r'"
+	replace stand_r3score = (Reviewer3Score - mean_`r')/sd_`r' if Reviewer3=="`r'"
 }
 
 *Generate a variable that shows the average standard score for each proposal
-gen avg_stand_score = (stand_r1_score + stand_r2_score + stand_r3_score)/3, af(AverageScore)
+gen avg_standscore = (stand_r1score + stand_r2score + stand_r3score)/3, af(AverageScore)
 
 *Rank each proposal based on average standard score.
-gsort -avg_stand_score
-gen rank=_n, af(avg_stand_score)
+egen rank = rank(avg_standscore), field
+
+*Clean variables so each reviewer no longer has their own column
+drop *_score
+drop mean_*
+drop sd_*
+
 
 
 

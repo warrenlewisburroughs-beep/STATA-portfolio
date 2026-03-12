@@ -21,6 +21,7 @@ cd $wd
 **Solution: We use the cluster kmeans command to create clusters of villages. For clusters with too many enumerators (more than 6), we remove extra enumerators and assign them to clusters that do not have enough enumerators using the code geodist.  
 
 
+*--------------------------------------------------------------------------------
 
 use q3_GPS_Data.dta
 set seed 4000 /// So we get the same group each time
@@ -110,4 +111,3 @@ drop clus_lat clus_lon distance_center rank current_size temp_dist
 
 * View final group sizes
 tabulate final_cluster
-

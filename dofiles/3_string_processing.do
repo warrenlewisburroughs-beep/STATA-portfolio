@@ -21,6 +21,7 @@ cd $wd
 **Solution: Use the code parse to turn school level data into student level data, reshape the data to be in long format, and use the code ustrregexs and ustrregexm to extract information from HTML code. 
 
 
+*-----------------------------------------------------------------------------
 
 use q1_psle_student_raw.dta
 
@@ -32,6 +33,7 @@ split s, parse(">PS") gen(student_num_)
 
 *Reshape the data so that the dataset is in long format
 gen school_id = _n, bef(s)
+//Note: Sometimes the reshaping breaks the do file. If this happens, go to line 37 and run the do file from here.
 reshape long student_num_@, i(school_id) j(student)
 
 *Drop extra variables

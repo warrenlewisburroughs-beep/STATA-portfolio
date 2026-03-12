@@ -19,7 +19,6 @@ cd $wd
 
 
 **Problem: We are given election data in an excel document that is not formatted to be used in STATA. We would like the dataset to be in wide form, with each observation being a ward, and each political party has a variable listing how many votes they got in the district. 
-
 **Solution: Clean the data (including trimming, deleting dashes or underscores, and making variables and observations lowercase) and then reshape.
 
 
@@ -125,17 +124,13 @@ drop ward_num candidatename
 sort id
 replace id = _n //Update id variable to reflect current dataset
 
-clear all
-
 
 *-----------------------------------------------------------------------------
 *Merging
 
 
 **Problem: We need to take information from an excel document and merge it to an existing STATA file.
-
 **Solution: Clean the imported excel data so discrepencies are removed and match variable names to merge. 
-
 
 *Step 1) Import Excel with variables as firstrow
 *-------------------------------------------------
