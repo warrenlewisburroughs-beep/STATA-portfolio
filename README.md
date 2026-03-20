@@ -5,10 +5,9 @@ The examples are adapted from coursework and are designed to illustrate my skill
 
 ## Skills Demonstrated
 
-* Data cleaning and variable construction -- Do file 1
-* Dataset merging and reshaping -- Do file 2
-* String parsing and text extraction -- Do file 3
-* Automation using loops and macros -- Do file 4
+* Dataset reshaping, cleaning, and merging -- Do file 1
+* String parsing and text extraction -- Do file 2
+* Automation using loops -- Do file 3
 
 Each script I aimed for a reproducible structure:
 
