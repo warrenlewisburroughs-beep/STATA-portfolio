@@ -1,7 +1,7 @@
 *-------------------------*
 * Stata Sample		      |
 * Warren Burroughs        |
-* Automation with loops   |
+* Automation with Loops	  |
 *-------------------------|
 
 clear all
@@ -125,9 +125,6 @@ tab final_cluster_group
 *Step 6) View clusters in a scatterplot
 *--------------------------------------------------
 twoway scatter lat lon, colorvar(final_cluster_group) colordiscrete colorrule(phue)
-
-
-
 
 
 
