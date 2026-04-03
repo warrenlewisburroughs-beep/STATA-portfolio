@@ -1,6 +1,6 @@
 # STATA Portfolio
 
-This repository contains examples of Stata code demonstrating skills used in economics and policy research. The scripts aims to showcase tasks performed by research assistants.
+This repository contains examples of Stata code demonstrating skills used in economics and policy research. The scripts aims to showcase common tasks performed by research assistants.
 The examples are adapted from coursework and are designed to illustrate my skillset.
 
 ## Skills Demonstrated
